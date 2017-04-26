@@ -1,3 +1,4 @@
+$(document).ready(function(){
 $("button").click(function(){
     var TR=false ;
     var TL=false;
@@ -15,12 +16,14 @@ if(!TL){
  checkCollision();
     }
 }
-if (event.which=== 40){
- $("#raindrop").css("top",$("#raindrop").offset().top + 10 ); 
- checkCollision();
-    }
+
     console.log ($("#migos").offset().left);
 });
+
+setInterval(function(){
+     console.log ($("#raindrop").offset().top);
+    $("#raindrop").css("top",$("#raindrop").offset().top + 10 );
+},3000);
 
 function checkCollision(){
      var migosLeft = $("#migos").offset().left;
@@ -52,3 +55,4 @@ console.log(migoRight,boxLeft,migosLeft,boxRight);
 }
 });
  
+});
